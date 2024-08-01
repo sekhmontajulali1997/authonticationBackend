@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import errorHandler from "./errorHandler/errorHandler.js";
 import authRouters from "./routers/authRouters/authRouters.js";
 import cookieParser from "cookie-parser";
-import cors from "cors";
+//import cors from "cors";
 
 // environment Varibale
 
@@ -21,12 +21,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://authontication-fontend.vercel.app",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://authontication-fontend.vercel.app",
+//     credentials: true,
+//   })
+// );
 
 // use Routers
 
