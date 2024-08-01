@@ -1,0 +1,36 @@
+# .dockerignore
+
+# Ignore node_modules from being copied from the host machine
+node_modules
+npm-debug.log
+yarn-error.log
+template
+.env
+
+# Ignore environment variable files
+
+
+# Ignore logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore OS generated files
+.DS_Store
+
+# Ignore the build directory (if using a build tool)
+build
+dist
+
+# Ignore coverage directory (if using a coverage tool like Jest)
+coverage
+
+# Ignore Dockerfile
+Dockerfile
+docker-compose.yml
+
+# Ignore Git files
+.git
+.gitignore
