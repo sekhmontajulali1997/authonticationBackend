@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin:
-      "https://authontication-fontend-pwrxni80m-sk-montajul-alis-projects.vercel.app",
+      "https://authontication-fontend.vercel.app",
     credentials: true,
     optionsSuccessStatus: 200,
   })
