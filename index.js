@@ -26,6 +26,7 @@ app.use(
     origin:
       "https://authontication-fontend-pwrxni80m-sk-montajul-alis-projects.vercel.app",
     credentials: true,
+    optionsSuccessStatus: 200,
   })
 );
 // app.use(
