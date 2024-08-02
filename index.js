@@ -21,16 +21,43 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors({
-  origin: "https://authontication-fontend.vercel.app",
-  credentials: true
-}))
-// app.use(
-//   cors({
-//     origin: "https://authontication-fontend.vercel.app",
-//     credentials: true,
-//   })
-// );
+
+const customCors = (req, res, next) => {
+  const allowedOrigins = ["https://authontication-fontend.vercel.app"];
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, DELETE, OPTIONS"
+    );
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Authorization, Accept"
+    );
+  }
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
+  next();
+};
+
+app.use(customCors);
+
+// app.use(cors({
+//   origin: "https://authontication-fontend.vercel.app",
+//   credentials: true
+// }))
+// // app.use(
+// //   cors({
+// //     origin: "https://authontication-fontend.vercel.app",
+// //     credentials: true,
+// //   })
+// // );
 
 // use Routers
 
